@@ -1,11 +1,12 @@
 ---
 title: "jekyll 기억할 것들"
-# categories: [jekyll]
-# tags: [jekyll, post]
+categories: [jekyll]
+tags: [jekyll, post]
 typora-root-url: ../
-author: "KSE"
 description: jekyll로 블로그 작성하기 위해 기억할 내용들
-toc: true
+author_profile: false
+sidebar:
+  nav: "docs"
 ---
 
 
@@ -27,12 +28,14 @@ toc: true
    title: 제목
    categories: [Top_Category, Sub_Category] # up to 2 elements
    tags: [tag1, tag2, ...] # TAG names should always be lowercase. 0~INFINITY
-   author: 작성자 이름(KSE)
    description: Short summary of the post. # or the first words of the post are used.
    typora-root-url: ../
+   sidebar:
+     nav: "docs"
    date: YYYY-MM-DD HH:MM:SS
    toc: false # If you want to turn off TOC(Table of Contents) for a specific post, add this line.
    pin: true # Pin one or more posts to the top of the home page
+   searh: false # Can't find this blog through search
    ---
    ```
 
