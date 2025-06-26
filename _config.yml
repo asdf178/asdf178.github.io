@@ -264,6 +264,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-redirect-from
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -272,6 +273,7 @@ whitelist:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-redirect-from
 
 
 # Archives
@@ -330,7 +332,7 @@ defaults:
       toc_icon: "bars"
       toc_sticky: true
       sidebar:
-        nav: "docs"
+        nav: "counts"
 
 date_format: "%Y-%m-%d"
 enable_copy_code_button: true

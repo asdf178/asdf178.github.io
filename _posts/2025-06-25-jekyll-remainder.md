@@ -3,10 +3,8 @@ title: "jekyll 기억할 것들"
 categories: [jekyll]
 tags: [jekyll, post]
 typora-root-url: ../
-description: jekyll로 블로그 작성하기 위해 기억할 내용들
+excerpt: jekyll로 블로그 작성하기 위해 기억할 내용들
 ---
-
-
 
 ## Server Local에서 Host하기
 
@@ -25,7 +23,7 @@ description: jekyll로 블로그 작성하기 위해 기억할 내용들
    title: 제목
    categories: [Top_Category, Sub_Category] # up to 2 elements
    tags: [tag1, tag2, ...] # TAG names should always be lowercase. 0~INFINITY
-   description: Short summary of the post. # or the first words of the post are used.
+   excerpt: Short summary of the post. # or the first words of the post are used.
    typora-root-url: ../
    sidebar:
      nav: "docs"
@@ -35,6 +33,7 @@ description: jekyll로 블로그 작성하기 위해 기억할 내용들
    header: # 미리보기 이미지
      teaser: /assets/images/my-awesome-post-teaser.jpg 
    searh: false # Can't find this blog through search
+   use_math: true # Latex 기능 쓰기
    ---
    ```
 
@@ -54,3 +53,17 @@ description: jekyll로 블로그 작성하기 위해 기억할 내용들
    ---
    ```
 
+
+
+## 이미지 추가하기
+
+```markdown
+![설명]({{site.url}}/assets/images/~.png)
+```
+
+
+
+## Latex로 수식 쓰기
+
+1. Front Matter에 `use_math: true` 넣기
+2. `$ 수식 $`  형식으로 .md 파일에 적기
