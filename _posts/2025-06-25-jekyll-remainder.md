@@ -4,9 +4,6 @@ categories: [jekyll]
 tags: [jekyll, post]
 typora-root-url: ../
 description: jekyll로 블로그 작성하기 위해 기억할 내용들
-author_profile: false
-sidebar:
-  nav: "docs"
 ---
 
 
@@ -34,7 +31,9 @@ sidebar:
      nav: "docs"
    date: YYYY-MM-DD HH:MM:SS
    toc: false # If you want to turn off TOC(Table of Contents) for a specific post, add this line.
-   pin: true # Pin one or more posts to the top of the home page
+   pin: true # Pin one or more posts to the top of the home page 
+   header: # 미리보기 이미지
+     teaser: /assets/images/my-awesome-post-teaser.jpg 
    searh: false # Can't find this blog through search
    ---
    ```
