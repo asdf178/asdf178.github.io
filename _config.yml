@@ -265,6 +265,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-redirect-from
+  - jekyll-seo-tag
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -333,6 +334,7 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: "counts"
+      typora-root-url: ../
 
 date_format: "%Y-%m-%d"
 enable_copy_code_button: true

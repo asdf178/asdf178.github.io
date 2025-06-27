@@ -59,7 +59,23 @@ body {
       float: inline-start;
       margin-inline: 0;
       width: 100%;
-      clear: both;
+      clear: both; 
+    }
+
+    .page__content {
+      font-size: 0.9em; // content 글꼴 크기를 조정
+    }
+
+    .page__meta {
+      font-size: 0.8em; // meta 글꼴 크기를 조정
+    }
+
+    .page__share {
+      font-size: 0.9em; // share 글꼴 크기를 조정
+    }
+
+    .toc {
+      font-size: 1em; // toc 글꼴 크기를 조정
     }
   }
 }

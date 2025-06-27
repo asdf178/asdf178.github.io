@@ -2,7 +2,6 @@
 title: "jekyll 기억할 것들"
 categories: [jekyll]
 tags: [jekyll, post]
-typora-root-url: ../
 excerpt: jekyll로 블로그 작성하기 위해 기억할 내용들
 ---
 
@@ -16,7 +15,7 @@ excerpt: jekyll로 블로그 작성하기 위해 기억할 내용들
 
 1. _posts 폴더 아래에 년도-월-일-제목.md 형식의 파일 만들기
 
-2. Front Matter에 title, categories, tags와 같은 기본 정보 설정하기
+2. Front Matter에 title, categories, tags, excerpt와 같은 기본 정보 설정하기
 
    ```yaml
    ---
