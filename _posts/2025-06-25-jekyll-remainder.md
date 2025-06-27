@@ -10,7 +10,7 @@ excerpt: jekyll로 블로그 작성하기 위해 기억할 내용들
 ## Server Local에서 Host하기
 
 1. PowerShell에서 asdf178.github.io 폴더로 경로 이동하기
-2. bundle exec jekyll s 또는 bundle exec jekyll serve 입력하기
+2. bundle exec jekyll s 또는 bundle exec jekyll serve (--livereload) 입력하기
 3. http://127.0.0.1:4000/ 열기
 
 ## Post 작성하기
@@ -89,3 +89,7 @@ header:
 <a href="#" class="btn btn--info">Link Text</a>
 ```
 <a href="https://mmistakes.github.io/minimal-mistakes/docs/utility-classes/#buttons" class="btn btn--info">More Info</a>
+
+## style 변경 사항 찾기
+**Ctrl + Shift + F &rarr; 전체 파일에서 검색**으로 **조정** 검색<br>
+(왜냐하면 css 파일을 변경할 때 주석에 '조정'이라고 써놓음)

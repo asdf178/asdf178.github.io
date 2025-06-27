@@ -29,6 +29,8 @@
   a[rel="permalink"] {
     position: static;
   }
+
+  font-size: .9em; // Recent posts들의 font size 조정(전반적으로)
 }
 
 .archive__subtitle {
@@ -49,6 +51,7 @@
   line-height: initial;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 1em; // post의 title font size 조정
 
   a[rel="permalink"]::before {
     content: '';
