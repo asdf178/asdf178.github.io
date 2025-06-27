@@ -19,7 +19,7 @@ locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "성은킴의 개발노트"
 title_separator          : "|"
-subtitle                 : "꾸준히 하는 게 중요하지"
+subtitle                 : "성공은 하루아침에 이루어지지 않는다"
 name                     : "김성은"
 description              : "개발 공부 과정을 기록하기 위한 김성은의 블로그."
 url                      : "https://asdf178.github.io"
@@ -115,7 +115,7 @@ analytics:
 author:
   name             : "김성은"
   avatar           : "../assets/images/profile.jpg"
-  bio              : "매 순간이 소중함을 잊지 말자"
+  bio              : "한양대학교<br>컴퓨터소프트웨어학과 1학년"
   # location         : 
   # email            : "rlatjddmscoding@gmail.com"
   links:

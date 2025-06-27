@@ -3,7 +3,7 @@ main:
   - title: "Home"
     url: /
   - title: "Category"
-    url: /categories-grid/ # /categories/
+    url: /categories-grid/ # /categories/ or /categories-grid/
   - title: "Tag"
     url: /tags/
   - title: "Search"

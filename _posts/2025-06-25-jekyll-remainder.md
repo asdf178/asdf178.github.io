@@ -1,5 +1,7 @@
 ---
 title: "jekyll 기억할 것들"
+header:
+  overlay_image: https://stqnq5ux4599.edge.naverncp.com/data2/content/image/2023/04/24/.cache/512/202304240914899.jpg
 categories: [jekyll]
 tags: [jekyll, post]
 excerpt: jekyll로 블로그 작성하기 위해 기억할 내용들
@@ -66,3 +68,24 @@ excerpt: jekyll로 블로그 작성하기 위해 기억할 내용들
 
 1. Front Matter에 `use_math: true` 넣기
 2. `$ 수식 $`  형식으로 .md 파일에 적기
+
+
+## header image 삽입하기
+![example image](\assets\images\mm-header-overlay-black-filter.jpg)
+```yaml
+excerpt: "This post should [...]"
+header:
+  overlay_image: /assets/images/unsplash-image-1.jpg
+  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+  actions:
+    - label: "Download"
+      url: "https://github.com"
+```
+<a href="https://mmistakes.github.io/minimal-mistakes/docs/layouts/#header-overlay" class="btn btn--info">More Info</a>
+
+## button 삽입하기
+```yaml
+<a href="#" class="btn btn--info">Link Text</a>
+```
+<a href="https://mmistakes.github.io/minimal-mistakes/docs/utility-classes/#buttons" class="btn btn--info">More Info</a>
