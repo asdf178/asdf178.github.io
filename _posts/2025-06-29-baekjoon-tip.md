@@ -23,3 +23,19 @@ set에서 search 할 때의 시간 복잡도는 O(1)이므로 더 빠르고 효�
 li = []
 st = set()
 ```
+
+### deque
+
+```python
+from collections import deque
+
+q = deque([1, 2, 3])
+q.append(4) # [1, 2, 3, 4]
+
+q.appendleft(0) # [0, 1, 2, 3, 4]
+
+q.pop() # 4, q = [0, 1, 2, 3]
+
+q.popleft() # 0, q = [1, 2, 3]
+
+```
