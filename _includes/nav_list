@@ -2,7 +2,7 @@
 
 <nav class="nav__list">
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}</label>
+  <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label | default: "Menu" }}</label>
    <ul class="nav__items"> <!-- 여러 nav를 위해 -->
     <li>
       <ul> <!-- 여러 category를 위해 -->
@@ -14,11 +14,13 @@
               </a>
               <ul> <!-- 여러 post를 위해 -->
                 {% for post in category[1] %}
-                <li>
-                  <a href="{{ post.url }}">
-                    <span class="nav__sub-sub-title">{{ post.title }}</span>
-                  </a>                  
-                </li>
+                    {% if post.show_nav %}
+                    <li>
+                      <a href="{{ post.url }}">
+                        <span class="nav__sub-sub-title">{{ post.title }}</span>
+                      </a>                  
+                    </li>
+                    {% endif %}
                 {% endfor %}
               </ul>
             </li>
@@ -30,12 +32,14 @@
                   <span class="nav__sub-title">{{ category }}</span>
                 </a>
                 <ul> <!-- 여러 post를 위해 -->
-                  {% for post in site.categories[category] %}              
-                  <li>
-                    <a href="{{ post.url }}">
-                      <span class="nav__sub-sub-title">{{ post.title }}</span>
-                    </a>                  
-                  </li>
+                  {% for post in site.categories[category] %} 
+                    {% if post.show_nav %}             
+                      <li>
+                        <a href="{{ post.url }}">
+                          <span class="nav__sub-sub-title">{{ post.title }}</span>
+                        </a>                  
+                      </li>
+                    {% endif %}
                   {% endfor %}
                 </ul>
               </li>

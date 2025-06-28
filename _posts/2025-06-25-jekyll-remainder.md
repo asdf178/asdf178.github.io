@@ -53,42 +53,13 @@ excerpt: jekyll로 블로그 작성하기 위해 기억할 내용들
    authors: [<author1_id>, <author2_id>]   # for multiple entries
    ---
    ```
-
-
-
-## 이미지 추가하기
-
-```markdown
-![설명]({{site.url}}/assets/images/~.png)
-```
-
-
+   
 
 ## Latex로 수식 쓰기
 
 1. Front Matter에 `use_math: true` 넣기
 2. `$ 수식 $`  형식으로 .md 파일에 적기
 
-
-## header image 삽입하기
-![example image](\assets\images\mm-header-overlay-black-filter.jpg)
-```yaml
-excerpt: "This post should [...]"
-header:
-  overlay_image: /assets/images/unsplash-image-1.jpg
-  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-  actions:
-    - label: "Download"
-      url: "https://github.com"
-```
-<a href="https://mmistakes.github.io/minimal-mistakes/docs/layouts/#header-overlay" class="btn btn--info">More Info</a>
-
-## button 삽입하기
-```yaml
-<a href="#" class="btn btn--info">Link Text</a>
-```
-<a href="https://mmistakes.github.io/minimal-mistakes/docs/utility-classes/#buttons" class="btn btn--info">More Info</a>
 
 ## style 변경 사항 찾기
 **Ctrl + Shift + F &rarr; 전체 파일에서 검색**으로 **조정** 검색<br>
