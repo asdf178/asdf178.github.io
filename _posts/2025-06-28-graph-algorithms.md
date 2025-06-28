@@ -19,6 +19,9 @@ excerpt: 유튜브 강좌를 보고 Graph Algorithm 내용 정리
 
 graph를 프로그래밍 코드로 다루기 위해서 adjacency list를 만든다. adjacency list는 hash map을 통해 구현된다. key는 모든 노드이고, value는 각 노드와 edge로 연결된 모든 neighbor node다.
 
+hash map의 시간 복잡도는 O(1)이므로 매우 효율적이다.
+{: .notice}
+
 ## Directed graph
 
 ![2025-06-28-011420](\assets\images\2025-06-28-graph-algorithms\2025-06-28-011420.png)
@@ -86,8 +89,6 @@ BFT는 iterative 방식으로만 구현할 수 있다.
 DFT와 BFT를 iterative하게 구현한 코드는 거의 동일하다.<br>
 딱 한 가지 다른 점은 DFT는 pop()을 통해 node를 제거하고, BFT는 shift()를 통해 node를 제거하는 것이다.
 
-### 그래프로 문제 해결
-
 ### Has Path
 ![asdf](\assets\images\2025-06-28-graph-algorithms\2025-06-28 135459.png)
 
@@ -133,7 +134,7 @@ src node에서 dst node로 도달할 수 없을 때 False다.
 undirected graph를 왼쪽과 같이 나타낼 때는 두 node가 서로 연결되어 있음을 나타낸다.<br>
 프로그래밍할 때의 편의를 위해서 왼쪽 표현을 오른쪽과 같은 adjacency list로 변환한다.
 
-### traversal 구현
+### Has Path 및 구현
 
 <figure>
   <img src="\assets\images\2025-06-28-graph-algorithms\2025-06-28 163701.png">
@@ -144,7 +145,7 @@ undirected graph를 왼쪽과 같이 나타낼 때는 두 node가 서로 연결�
 
 undirected graph에서 nodeA부터 nodeB까지의 has Path를 문제하는 코드다.
 
-### connected components count 구현
+### connected components count 및 구현
 
 ![](\assets\images\2025-06-28-graph-algorithms\2025-06-28 165702.png)
 
@@ -154,10 +155,66 @@ undirected graph에서 nodeA부터 nodeB까지의 has Path를 문제하는 코�
 
 위의 코드를 통해 구현할 수 있다.
 
+### largest component 및 구현
 
+![](\assets\images\2025-06-28-graph-algorithms\2025-06-28 194412.png){: width="90%"}
 
+largest component size는 4다.
 
+![](\assets\images\2025-06-28-graph-algorithms\2025-06-28 194931.png)
 
+<figure>
+  <img src="\assets\images\2025-06-28-graph-algorithms\2025-06-28 195652.png">
+  <figcaption>undirected graph에서 DFT로 largest component 구하는 코드 구현</figcaption>
+</figure>
+
+### shortest path 및 구현
+
+![](\assets\images\2025-06-28-graph-algorithms\2025-06-28 205218.png)
+
+<p align="center">
+  <img src="\assets\images\2025-06-28-graph-algorithms\2025-06-28 205348.png" width="45%">
+  <img src="\assets\images\2025-06-28-graph-algorithms\2025-06-28 205356.png" width="45%">
+</p>
+
+shortest path problem에서는 DFT보다 BFT가 유리하다.
+
+<figure>
+  <img src="\assets\images\2025-06-28-graph-algorithms\2025-06-28 210215.png">
+  <figcaption>shortest path를 BFT로 해결</figcaption>
+</figure>
+
+### Island count 및 구현
+
+<p align="center">
+  <img src="\assets\images\2025-06-28-graph-algorithms\2025-06-28 210702.png" width="45%">
+  <img src="\assets\images\2025-06-28-graph-algorithms\2025-06-28 210709.png" width="45%">
+</p>
+
+W는 Water, L은 Land다. 위의 예시에서 Island는 4개다.
+
+![](\assets\images\2025-06-28-graph-algorithms\2025-06-28 211055.png)
+
+![](\assets\images\2025-06-28-graph-algorithms\2025-06-28 211510.png)
+
+undirected graph 문제로 치환해서 다룰 수 있다.
+
+![](\assets\images\2025-06-28-graph-algorithms\2025-06-28 212858.png)
+
+<figure>
+  <img src="\assets\images\2025-06-28-graph-algorithms\2025-06-28 212927.png">
+  <figcaption>12번 줄에서 grid.length는 grid[0].length로 고쳐야 한다.</figcaption>
+</figure>
+
+### minimum Island 및 구현
+
+![](\assets\images\2025-06-28-graph-algorithms\2025-06-28 213439.png){: width="80%"}{: .align-center}
+
+![](\assets\images\2025-06-28-graph-algorithms\2025-06-28 213916.png)
+
+![](\assets\images\2025-06-28-graph-algorithms\2025-06-28 214716.png)
+
+![](\assets\images\2025-06-28-graph-algorithms\2025-06-28 214737.png)
 
 
 

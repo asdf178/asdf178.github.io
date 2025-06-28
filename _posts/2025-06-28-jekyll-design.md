@@ -38,6 +38,12 @@ excerpt: jekyll로 블로그 작성할 때 팁들
 </figure>
 ```
 
+## 새로운 탭에서 열리도록 하이퍼링크 걸기
+
+```html
+<a href="#" target="_blank">#</a>
+```
+
 ## 마크다운 적용 안 하기
 ```html
 <pre></pre>
