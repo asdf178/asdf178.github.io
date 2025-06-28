@@ -134,6 +134,12 @@ src node에서 dst node로 도달할 수 없을 때 False다.
 undirected graph를 왼쪽과 같이 나타낼 때는 두 node가 서로 연결되어 있음을 나타낸다.<br>
 프로그래밍할 때의 편의를 위해서 왼쪽 표현을 오른쪽과 같은 adjacency list로 변환한다.
 
+### BFT 구현
+<p align="center">
+  <img src="\assets\images\2025-06-28-graph-algorithms\2025-06-28 230800.png" width="85%">
+  <figcaption>undirected graph에서 BFT 구현(직접 작성한 코드)</figcaption>
+</p>
+
 ### Has Path 및 구현
 
 <figure>
@@ -216,23 +222,7 @@ undirected graph 문제로 치환해서 다룰 수 있다.
 
 ![](\assets\images\2025-06-28-graph-algorithms\2025-06-28 214737.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<br>
 # 출처
 
 [Graph Algorithms for Technical Interviews - Full Course](https://www.youtube.com/watch?v=tWVWeAqZ0WU)
