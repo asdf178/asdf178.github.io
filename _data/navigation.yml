@@ -28,3 +28,9 @@ counts:
     use: true
   - title: "Tag"
     use: false
+
+all_posts:
+  - all: true # true, false
+  - categories: # Set 'all' to false, and write category in the order you want.
+    - jekyll
+    - etc

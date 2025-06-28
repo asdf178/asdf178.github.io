@@ -333,7 +333,7 @@ defaults:
       toc_icon: "bars"
       toc_sticky: true
       sidebar:
-        nav: "counts"
+        nav: "all_posts"
       typora-root-url: ../
 
 date_format: "%Y-%m-%d"
