@@ -39,3 +39,25 @@ q.pop() # 4, q = [0, 1, 2, 3]
 q.popleft() # 0, q = [1, 2, 3]
 
 ```
+
+### for문 2번 쓰는 대신 쓸 수 있는 코드
+```python
+result = []
+max = 0
+for i in range(1, n+1):
+    size = Function(i) # 숫자를 return 하는 임의의 함수
+
+    if max < size:
+        max = size
+        result = [i]
+    elif max == size:
+        result.append(i)
+```
+
+일반적으로는 size를 리스트에 저장한 뒤, max 값 구하는 for문과 max와 일치하는 값을 찾기 위한 for문 두 개를 구현했을 것이다. 하지만 위와 같이 하나의 for문으로 구현할 수도 있고, 이를 통해 시간 복잡도를 줄일 수 있다.
+
+### Memoization을 통해 시간 복잡도 줄이기
+
+**메모이제이션(Memoization)**은 이미 계산한 결과를 저장해 두었다가, 같은 입력이 들어오면 다시 계산하지 않고 저장된 값을 바로 사용하는 기법이다.
+
+코드 실행 시간을 줄이고, 불필요한 중복 계산을 줄일 수 있다.

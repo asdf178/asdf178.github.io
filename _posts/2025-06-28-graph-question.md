@@ -85,3 +85,76 @@ stack, queue의 length가 0 이상일 동안 traversal을 함으로써 각 알�
 
  다양한 graph 예제를 통해 알고리즘 작동 과정을 차근차근 따라가면서 곱씹어 보는 것이 이론과 구현을 완전히 습득하는 데에 도움이 된다.
 
+## 왜 visited_global를 사용하는 전략이 틀렸는가
+### 의문점
+
+```python
+import sys
+from collections import deque
+
+def infectedSize(graph, node, visited_global):
+    queue = deque()
+    queue.appendleft(node)
+
+    visited = set()
+    visited.add(node)
+    visited_global.add(node)
+
+    size = 0
+
+    while len(queue) > 0:
+        current = queue.pop()
+        size += 1
+
+        for neighbor in graph[current]:
+            if neighbor not in visited:
+                queue.appendleft(neighbor)
+                visited.add(neighbor)
+                visited_global.add(neighbor)
+    
+    return size
+
+input = sys.stdin.readline
+n, m = map(int, input().split())
+graph = {}
+for i in range(1, n+1):
+    graph[i] = []
+
+for _ in range(m):
+    a, b = map(int, input().split())
+    graph[b].append(a)
+
+counts = []
+max = 0
+visited_global = set()
+for i in range(1, n+1):
+    if i in visited_global:
+        continue
+    size = infectedSize(graph, i, visited_global)
+    counts.append((i, size))
+
+    if max < size:
+        max = size
+
+most = []
+for i in range(len(counts)):
+    if counts[i][1] == max:
+        most.append(counts[i][0])
+
+print(*sorted(most))
+```
+[효율적인 해킹](https://www.acmicpc.net/problem/1325) &larr; 백준 1325번 문제
+
+해당 백준 문제를 풀면서 수많은 시간 초과와 메모리 초과를 겪었기에 코드의 비효율성을 해결하기 위해서 visited_global을 도입했다.
+
+이미 방문한 노드를 infectedSize 함수에 넣는 것은 의미가 없다고 생각했다. 왜냐하면 그 노드의 이웃 노드가 감염시킨 컴퓨터의 수(connected component)가 당연히 더 많을 것이고 생각했기 때문이다.
+
+### 해결
+
+![](\assets\images\2025-06-28-graph-question\KakaoTalk_20250630_020310923.jpg){: width="50%"}{: .align-center}
+
+위의 예시에서 노드 1에서 출발하면 모든 노드를 거칠 수 있다. 그러면 visited_global에 모든 노드가 들어가게 된다.
+
+하지만 다른 모든 노드에서 출발해도 모든 노드를 거칠 수 있다는 것이 핵심이다. 즉 위의 예시에서 출력값은 1 2 3 4 5 6이 되어야 하지만 위의 코드에서는 1만 출력된다.
+
+이것이 바로 visited_global을 도입할 때의 문제점이다. 노드 A의 connected component가 n일 때, 노드 A에서 시작된 순회 과정에서 거쳐 지나갔던 노드 B 역시 connected component가 n일 때 수 있으며, n이 모든 connected component 값들 중 가장 클 때 이러한 문제가 생기게 된다.
