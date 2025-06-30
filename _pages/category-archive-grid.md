@@ -1,7 +1,8 @@
 ---
-title: "Posts by Category"
+title: "Category"
 layout: categories
 permalink: /categories-grid/
 entries_layout: grid
-author_profile: true
+sidebar:
+  nav: "all_posts"
 ---

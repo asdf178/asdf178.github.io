@@ -2,7 +2,7 @@
 title: "기억해 둘 백준 문제들"
 categories: [baekjoon]
 tags: [baekjoon]
-excerpt: 해결 과정에서 많은 것을 배운 백준 문제들
+excerpt: "해결 과정에서 많은 것을 배운 백준 문제들"
 ---
 
 ### 1325번

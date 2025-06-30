@@ -19,7 +19,7 @@
   @include breakpoint($large) {
     float: inline-start;
     width: calc(#{$right-sidebar-width-narrow} - 1em);
-    opacity: 0.75;
+    opacity: 1; // 초기 설정 값은 0.75 였지만 hover 할 때 sidebar 전체가 진해지는 효과가 별로라서 1로 변경함
     -webkit-transition: opacity 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out;
 
@@ -94,6 +94,13 @@
         .toc__menu {
           overflow-y: auto;
           max-height: calc(100vh - 7em);
+
+          a { // 이게 더 상위 옵션인가? 
+            &:hover { // _navigation.scss에서 이 옵션 적용하면 잘 작동 안 하는데
+              text-decoration: none; // _sidebar.scss에 작성하니까 잘 작동함
+            }
+          }
+
         }
       }
     }

@@ -188,7 +188,7 @@
     transition: none;
 
     &:hover {
-      color: $masthead-link-color-hover;
+      color: $masthead-link-color-hover; // greedy_nav을 hover 할 때 글자 색이 진해진다.
     }
 
     &.site-logo {
@@ -242,7 +242,7 @@
         position: absolute;
         inset-inline-start: 0;
         bottom: 0;
-        height: 4px;
+        height: 1.5px; // greedy_nav(위쪽 네비게이션 바)를 hover 할 때 표시되는 밑줄 두께 조정
         background: $primary-color;
         width: 100%;
         -webkit-transition: $global-transition;
@@ -504,6 +504,36 @@
   padding: 0.1rem 0;
   font-family: $sans-serif-narrow;
   font-size: 1.3em;
+  opacity: 0.9;
+  
+  // 내가 추가한 부분
+  // hover 할 때 밑줄 애니메이션 및 글자 색 진하기 바꾸기
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    color: #000;
+    opacity: 1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 0.065em;
+    width: 0;
+    background: $primary-color;
+    transform: translateX(-50%) scaleY(0.8);
+    transition: width 0.3s ease;
+}
+
+  &:hover::before {
+    width: 100%;
+  }
+
+  // 내가 추가한 부분 끝
+
 }
 
 /*
@@ -548,12 +578,12 @@
     display: block;
     padding: 0.25rem 0.75rem;
     color: $muted-text-color;
-    font-weight: bold;
+    // font-weight: bold;
     line-height: 1.5;
     border-bottom: 1px solid $border-color;
 
     &:hover {
-      color: $text-color;
+      color: #000;
     }
   }
 
