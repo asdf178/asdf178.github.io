@@ -32,10 +32,10 @@ excerpt: jekyll로 블로그 작성할 때 팁들
 ## 이미지에 caption 적용하기
 
 ```html
-<figure> <!-- figure 태그는 width 적용 안 됨. p 태그로 변경 가능 -->
+<p> 
   <img src="#">
   <figcaption>Caption</figcaption>
-</figure>
+</p>
 ```
 
 ## 새로운 탭에서 열리도록 하이퍼링크 걸기
