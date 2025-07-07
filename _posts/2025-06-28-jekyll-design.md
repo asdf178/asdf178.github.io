@@ -97,3 +97,9 @@ header:
 왼쪽 화살표: &larr;
 오른쪽 화살표: &rarr;
 ```
+
+## 내용 숨기기
+
+category 전체 숨기기: data/navigation.yml 에서 all_posts의 hide에 숨기고 싶은 category를 추가한다.
+
+특정 post만 숨기기: 해당 post의 Front Matter에서 show_each_post: false 를 입력한다.

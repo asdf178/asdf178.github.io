@@ -5,6 +5,7 @@ header:
 categories: [jekyll]
 tags: [jekyll, post]
 excerpt: jekyll로 블로그 작성하기 위해 기억할 내용들
+show_each_post: false
 ---
 
 ## Server Local에서 Host하기

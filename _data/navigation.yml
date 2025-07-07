@@ -34,3 +34,5 @@ all_posts:
   - categories: # Set 'all' to false, and write category in the order you want.
     - jekyll
     - etc
+  - hide: # all이 true 일 때 숨길 category들
+    - yaml

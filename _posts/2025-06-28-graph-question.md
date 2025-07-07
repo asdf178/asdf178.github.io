@@ -3,7 +3,7 @@ title: 그래프 이론에 대한 고민들
 categories: [graph]
 tags: [graph, question]
 excerpt: 그래프 이론을 공부하며 느낀 고민들과 해결 과정
-# show_nav: false
+show_each_post: false
 ---
 
 ## undirected graph traversal에 대한 의문점

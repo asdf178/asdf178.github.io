@@ -336,6 +336,8 @@ defaults:
         nav: "all_posts"
       typora-root-url: ../
       show_nav: true
+      show_each_post: true
+
 
 date_format: "%Y-%m-%d"
 enable_copy_code_button: true
