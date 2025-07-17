@@ -67,3 +67,7 @@ for i in range(1, n+1):
 백준 1325번 효율적인 해킹을 풀 때 unordered_map으로 했을 때는 시간 초과가 떴지만, 이중 vector로 했을 때는 시간 초과가 뜨지 않았다. unordered_map의 시간 복잡도가 O(1)이기 때문에 당연히 이중 vector보다 빠를 것이라고 단순히 생각한 것이 오류였다.
 
 잘 생각해보면 이중 vector로 구현한 것이 더 빠를 수 밖에 없다.
+
+### 시간 복잡도 면에서 vector VS set
+
+vector<vector<int>>보다는 vector<unordered_set<int>>가 erase에 좋을 수 있다. 하지만 vector의 크기가 작거나 탐색만 한다면 vector가 더 빠르다.

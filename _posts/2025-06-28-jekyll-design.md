@@ -32,7 +32,7 @@ excerpt: jekyll로 블로그 작성할 때 팁들
 ## 이미지에 caption 적용하기
 
 ```html
-<p> 
+<p align="center"> 
   <img src="#">
   <figcaption>Caption</figcaption>
 </p>
@@ -103,3 +103,18 @@ header:
 category 전체 숨기기: data/navigation.yml 에서 all_posts의 hide에 숨기고 싶은 category를 추가한다.
 
 특정 post만 숨기기: 해당 post의 Front Matter에서 show_each_post: false 를 입력한다.
+
+## 수식 삽입하기
+
+Front Matter에 `use_math: true` 넣기
+
+- inline 방식으로 수식을 삽입할 때
+```markdown
+$ (수식) $
+```
+
+- block 방식으로 수식을 삽입할 때
+```markdown
+$$ (수식) $$
+```
+<a href="https://yoongyoonge.github.io/blog-mathematical-expression/" class="btn btn--info">More Info</a>
