@@ -122,6 +122,21 @@ int sum = accumulate(v.begin(), v.end(), 0); // 0은 합의 초기값
 // pop
 int last_element = v.back(); // vector의 마지막 원소 반환
 v.pop_back(); // vector의 마지막 원소 제거. 반환 값 없음
+
+// 정렬
+#include <algorithm>
+
+// 오름차순 정렬
+sort(v.begin(), v.end()); 
+
+// 내림차순 정렬
+sort(v.rbegin(), v.rend()); 
+
+bool comp(int a, int b){
+    return a > b;
+}
+sort(v.begin(), v.end(), comp); // false일 경우 swap
+
 ```
 
 ### set
@@ -192,6 +207,8 @@ tree[3].emplace_back(4);
 ### queue
 ![](\assets\images\2025-07-06-cpp-reminder\image1.png)
 ```cpp
+#include <queue>
+
 // queue 정의
 queue<int> q;
 
@@ -212,6 +229,16 @@ q.size();
 
 // 비었는지 확인
 q.empty(); 
+
+// priority queue
+priority_queue<int> pq; // max heap
+pq.push(4);
+pq.push(7);
+pq.size();
+pq.top();
+pq.pop();
+
+priority_queue<int, vector<int>, greater<int>> pq; // min heap
 ```
 
 ### pair
@@ -223,6 +250,18 @@ pair<int, int> a;
 a=make_pair(2,4);
 cout<< a.first;  // 2 출력
 cout<< a.second; // 4 출력 
+```
+
+### 수학 기호(절댓값, 반올림, 올림, 내림)
+
+```cpp
+#include <cmath>
+
+abs(-1); // 절댓값
+double ceil(double x); // 올림(double, float, long double)
+double floor(double x); // 내림(double, float, long double)
+round(3.5); // 반올림
+
 ```
 
 ### max_element(min_element)
