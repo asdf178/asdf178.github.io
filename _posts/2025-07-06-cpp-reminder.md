@@ -442,7 +442,7 @@ while(q.size()){
     }
 }
 ```
-<a href="[경로](https://velog.io/@panghyuk/%EC%B5%9C%EB%8B%A8-%EA%B2%BD%EB%A1%9C-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)" class="btn btn--info">More Info</a>
+<a href="https://velog.io/@panghyuk/%EC%B5%9C%EB%8B%A8-%EA%B2%BD%EB%A1%9C-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98" class="btn btn--info">More Info</a>
 
 ### binary search
 ```cpp
