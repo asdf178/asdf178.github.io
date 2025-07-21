@@ -137,6 +137,10 @@ bool comp(int a, int b){
 }
 sort(v.begin(), v.end(), comp); // false일 경우 swap
 
+// 인덱스 접근을 위한 공간 확보하기
+v.assign(10, -1); // 10만큼의 공간을 -1로 채움
+v.resize(10); // 10만큼의 공간을 확보만 함. 즉 0~9까지의 인덱스로 접근 가능.
+
 ```
 
 ### set
@@ -152,16 +156,32 @@ s.insert(3);
 s.insert(7);
 
 // 제거
-s.erase(7); 
+s.erase(7); // 원소로 제거
+s.erase(s.begin() + 1); // 1번째 인덱스 원소 제거
 s.clear(); // set에 있는 모든 원소 삭제
 
 // 찾기
 s.find(3); // 원소 7에 해당하는 iterator 반환
 
+// for문
+for(set<int>::iterator it=s.begin(); it != s.end(); it++){
+    cout << *it << '\n';
+}
+
 // 기타
 s.count(1); // set 내에서 원소 1의 개수 반환
 s.empty(); // 비어있으면 true, 아니면 false 반환
 s.size(); // 세트에 들어있는 원소으 수 반환
+
+// compare 구조체 정의해서 정렬 방식 커스텀하기
+struct compare{ // const 안 붙이면 오류 남.
+    bool operator()(const pair<int, int>& a, const pair<int, int>& b) const{
+        if(a.second != b.second) return a.second > b.second;
+        else return a.first > b.first;
+    }
+};
+
+set<pair<int, int>, compare> list;
 
 // 특징
 // 1. 중복을 허용하지 않음
@@ -364,6 +384,33 @@ str.empty(); // str이 빈 문자열인지 확인
 reverse(str.begin(), str.end());
 ```
 
+### iterator
+```cpp
+// 이하 백준 21939번 문제와 관련된 코드
+#include <set>
+#include <map>
+#include <vector>
+
+set<pair<int, int>> list;
+map<int, set<pair<int, int>>::iterator> index; // set에 있는 요소를 빠르게 제거하기 위해서 pair의 first 값을 key로 하고, 그에 해당하는 set의 iterator를 value로 하는 map를 만듦.
+
+// 요소 삽입
+auto it = list.emplace(P, L).first; // set::emplace는 (iterator, bool) 반환.
+index[P] = it;  // index 갱신 필요
+
+// 요소 삭제
+list.erase(index[P]);  // iterator를 통해 삭제. iterator도 삭제되기 때문에 이후에는 it 접근하면 UB
+index.erase(P);        // index에서도 제거
+
+// vector에서는 요소를 삭제하면 남아있는 요소들의 index가 변한다.
+// 하지만 set에서는 요소를 제거해도 나머지 iterator들의 값이 여전히 유효하다.
+
+// 이하 기타 내용
+#include <iterator>
+
+auto it = prev(set.end()); // set, map, vector 등의 마지막 iterator를 반환
+```
+
 ### Dijkstra algorithm
 ```cpp
 #include <vector>
@@ -375,6 +422,8 @@ vector<vector<pair<int, int>>> graph; // graph[start].emplace(weight, end);
 vector<int> dist(n+1, INT_MAX);
 dist[k] = 0; // k: 시작 노드
 
+// 최소힙을 써서 방문되지 않은 노드들 중 거리가 가장 짧은 노드의 이웃 노드를 방문함.
+// top node는 최단 거리임이 보장됨. 왜냐하면 weight가 모두 양수이기 때문.
 priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> q;
 q.emplace(0, k); // 시작 노드인 k의 distance는 0
 
@@ -382,6 +431,7 @@ while(q.size()){
     pair<int, int> current = q.top();
     q.pop();
 
+    // visited된 노드라는 의미
     if(dist[current.second] < current.first) continue;
 
     for(pair<int, int> neighbor : graph[current.second]){
