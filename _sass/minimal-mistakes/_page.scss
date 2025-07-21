@@ -80,6 +80,10 @@ body {
   }
 }
 
+code {
+  font-size: 0.8rem; // code 블록 안의 폰트만 크기 조정
+}
+
 .page__title {
   margin-top: 0;
   line-height: 1;

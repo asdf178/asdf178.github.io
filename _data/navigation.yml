@@ -36,3 +36,4 @@ all_posts:
     - etc
   - hide: # all이 true 일 때 숨길 category들
     - yaml
+    - graph
