@@ -172,7 +172,7 @@ s.size(); // 세트에 들어있는 원소으 수 반환
 ### map
 
 ```cpp
-#include <ordered_map> // #include <unordred_map>
+#include <map> // #include <unordred_map>
 
 // map 정의
 ordered_map<int, char> m;
@@ -239,6 +239,16 @@ pq.top();
 pq.pop();
 
 priority_queue<int, vector<int>, greater<int>> pq; // min heap
+priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> q; // min heap with pair
+
+// compare 정의
+struct cmopare{
+    bool operator()(int& a, int& b){
+        return a > b;
+    }
+}
+
+priority_queue<int, vector<int>, compare> pq;
 ```
 
 ### pair
@@ -250,6 +260,15 @@ pair<int, int> a;
 a=make_pair(2,4);
 cout<< a.first;  // 2 출력
 cout<< a.second; // 4 출력 
+
+pair<int, double> p = make_pair(1, 2.1);
+
+// for문에서 pair 쉽게 반복하기
+vector<pair<string, int>> m;
+
+for(auto& [key, value] : m){
+    cout << key << " " << value << endl;
+}
 ```
 
 ### 수학 기호(절댓값, 반올림, 올림, 내림)
@@ -261,7 +280,6 @@ abs(-1); // 절댓값
 double ceil(double x); // 올림(double, float, long double)
 double floor(double x); // 내림(double, float, long double)
 round(3.5); // 반올림
-
 ```
 
 ### max_element(min_element)
@@ -277,7 +295,7 @@ cout << *min_element(v.begin(), v.end());
 ### string
 
 ```cpp
-#include <string>
+#include <string> // <iostream>에서 자동으로 include 되기는 하지만 명시적으로 포함하는 것이 좋음
 
 // 빈 문자열 str 생성
 string str; 
@@ -341,10 +359,40 @@ str.shrink_to_fit(); // capacity가 실제 사용하는 메모리보다 큰 경�
 str.reserve(n); // str에 n만큼 메모리를 미리 할당해 줌.
 str.empty(); // str이 빈 문자열인지 확인
 
-
-
-
+// string 뒤집기
+#include <algorithm>
+reverse(str.begin(), str.end());
 ```
+
+### Dijkstra algorithm
+```cpp
+#include <vector>
+#include <queue>
+#include <climits>
+
+vector<vector<pair<int, int>>> graph; // graph[start].emplace(weight, end);
+
+vector<int> dist(n+1, INT_MAX);
+dist[k] = 0; // k: 시작 노드
+
+priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> q;
+q.emplace(0, k); // 시작 노드인 k의 distance는 0
+
+while(q.size()){
+    pair<int, int> current = q.top();
+    q.pop();
+
+    if(dist[current.second] < current.first) continue;
+
+    for(pair<int, int> neighbor : graph[current.second]){
+        if(current.fist + neighbor.first < dist[neighbor.second]){
+            dist[neighbor.second] = current.first + neighbor.first;
+            q.emplace(dist[neighbor.second], neighbor.second);
+        }
+    }
+}
+```
+<a href="[경로](https://velog.io/@panghyuk/%EC%B5%9C%EB%8B%A8-%EA%B2%BD%EB%A1%9C-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)" class="btn btn--info">More Info</a>
 
 ### binary search
 ```cpp
